@@ -4,9 +4,9 @@ function Top() {
     const [cryptoArr, setCryptoArr] = useState([]);
 
     useEffect(()=>{
-       const fetchData = async() =>{
+       const fetchData = async () =>{
         try{
-            const response = await fatch ('https://api.coinlore.net/api/tickers/');
+            const response = await fetch ('https://api.coinlore.net/api/tickers/');
             const data = await response.json();
             setCryptoArr(data.data.slice(0, 10));
         }catch (error){
